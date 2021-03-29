@@ -1,0 +1,23 @@
+
+<div class="card  text-white container d-flex justify-content-center  align-items-cente" style="height: 40rem;">
+  <img class="card-img img-thumbnail" src="b.jpg" alt="Cinque Terre">
+ <form  class="card-img-overlay">
+  <div class=" text-center  mt-5">
+    <h3 class=" display-1 card-title mb-5">Login</h3>
+    <label  for="Username">Username</label>
+       <input class="offset-3 col-sm-6 col-6 form-control" [(ngModel)]="username"  type="text" placeholder="Username" name="UserName"> 
+  </div>
+  <div class=" mb-3 text-center">
+    <label for="password">Passoword</label>
+       <input class=" offset-3 col-sm-6 col-6 form-control" [(ngModel)]="password" placeholder="Password" type="password" name="Password">
+  </div>
+  <div class=" mt-3">
+    
+    <button class=" bg-light mt-5 offset-3 col-sm-6 col-6 btn btn-light " (click)=login_fun() >Login</button>
+  </div>
+    </form>
+  
+</div>
+
+
+
