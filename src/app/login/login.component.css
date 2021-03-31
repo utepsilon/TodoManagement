@@ -1,0 +1,14 @@
+#icon
+{
+    background-image: url(../login/og-image.png);
+    height: 100px;
+    width: 100px;
+}
+#img{
+    background-image: url(../login/logo.jpg);
+    width: 100px;
+    height: 66px;
+}
+#error{
+    display: none;
+}
