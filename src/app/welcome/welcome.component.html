@@ -1,7 +1,25 @@
+<div class="card text-center">
+  <div class="card-header">Welcome {{ username1 }}</div>
+  <div class="card-body">
+    <h4 class="card-title">Home Page</h4>
+    <p class="card-text">
+      Random text, 6 Maheene rukja meri body banne wali hai
+    </p>
+    <!-- <a class="btn btn-dark" href="#">ReadMore</a> -->
+  </div>
+  <div class="card-footer text-muted">2 Days Ago</div>
+</div>
 
-<div class="container">
-
-
-<button class="btn  btn-outline-primary" (click)="fun()"> Go to Todo</button>
+<div class="container mt-5">
+  Click Here to Customize welcome Message 
+  <button class="btn btn-outline-primary" (click)="getWelcome()">View Message
+   
+  </button>
+  <p>
+    
+      {{welcomeMsg.message}}
+   
+  </p>
+  
 
 </div>

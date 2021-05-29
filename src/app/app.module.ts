@@ -10,6 +10,9 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ErrorComponent } from './error/error.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpInterceptorBasicAuthService } from './service/http/http-interceptor-basic-auth.service';
 
 @NgModule({
   declarations: [
@@ -18,16 +21,20 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     TodoListComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

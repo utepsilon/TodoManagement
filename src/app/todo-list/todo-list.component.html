@@ -1,22 +1,26 @@
-
 <div class="container">
-<table  class="table bg-light mt-5 col-sm-8 col-6 ">
-  <caption>My Todo's</caption>
-  <thead>
-    <tr class="bg-success">
-      <th>id</th>
-      <th>Description</th>
-      <th>Date</th>
-      <th>Is Completed?</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let todo of todos">
-    <td>{{todo.id}}</td>
-    <td>{{todo.description}}</td>
-    <td>{{todo.targetdate | date}}</td>
-    <td>{{todo.status}}</td>
-    </tr>
-  </tbody>
-</table> 
+  <table class="table bg-light mt-5 col-sm-8 col-6">
+    <caption>
+      My Todo's
+    </caption>
+    <thead>
+      <tr class="bg-success">
+        <th>id</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Is Completed?</th>
+        <th>Unique ID</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo1 of todos1">
+        <td>{{ todo1.id }}</td>
+        <td>{{ todo1.todo_description }}</td>
+        <td>{{ todo1.todo_targetdate }}</td>
+        <td>{{ todo1.status }}</td>
+        <td>{{todo1.uniqueid}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

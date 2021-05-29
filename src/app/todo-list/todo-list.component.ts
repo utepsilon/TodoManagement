@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { TodoDataService } from '../service/data/todo-data.service';
 
-export class todo{
-  constructor(public id: number, public description:string, public status:boolean,public targetdate:Date){
+export class todo {
+  
+  constructor(public id: number,
+              public status: boolean, 
+              public todo_description: string,
+              public todtargetdate: string,
+              public uniqueid: string) {
 
   }
 }
@@ -13,21 +19,22 @@ export class todo{
 })
 export class TodoListComponent implements OnInit {
 
-todos =[new todo(1,"jogging at 8",false,new Date()),
-        new todo(2,"todo2",true,new Date()),
-        new todo(3,"todo3",false,new Date),
-        new todo(4,"todo4",false,new Date),
-        new todo(5,"todo5",false,new Date),
-        new todo(6,"todo6",false,new Date),
-        new todo(7,"todo8",false,new Date),
-        new todo(8,"todo8",false,new Date),
-        new todo(9,"todo9",false,new Date)]
-        
+  Todos1: todo[];
+  
 
 
-  constructor() { }
+  constructor(public TodoServ: TodoDataService) { }
 
   ngOnInit() {
+    this.TodoServ.RetriveAllTodos().subscribe(
+      response => {
+        this.Todos1 = response;
+        console.log(this.Todos1)
+      }
+
+    );
+
+
   }
 
 }
